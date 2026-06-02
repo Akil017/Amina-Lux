@@ -37,9 +37,9 @@ export default async function HomePage() {
         }}/>
         <div className="absolute bottom-0 left-0 w-full h-px" style={{background:'linear-gradient(90deg,transparent,#C9A84C,transparent)'}}/>
 
-        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 pt-36 pb-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 pb-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-20" style={{paddingTop:'calc(99px + 3rem)'}}>
           {/* Text */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-center lg:text-left" style={{position:'relative',zIndex:2}}>
             <div className="inline-flex items-center gap-2 mb-6 fade-up fade-up-delay-1"
               style={{border:'1px solid rgba(201,168,76,0.3)',padding:'6px 16px'}}>
               <div style={{width:16,height:1,background:'rgba(201,168,76,0.6)'}}/>
@@ -83,8 +83,8 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Decorative box */}
-          <div className="flex-1 flex justify-center">
+          {/* Decorative box — desktop only */}
+          <div className="hidden lg:flex flex-1 justify-center">
             <div className="relative" style={{width:320,height:480}}>
               <div className="absolute inset-0 flex flex-col items-center justify-center"
                 style={{background:'linear-gradient(135deg,#1A5C2A,#2E7D45)',border:'1px solid rgba(201,168,76,0.2)'}}>
