@@ -30,14 +30,14 @@ export default async function HomePage() {
     <div className="min-h-screen">
 
       {/* ── HERO ── */}
-      <section style={{background:'#0D3318', paddingTop:99, minHeight:'100vh', display:'flex', alignItems:'center', position:'relative', overflow:'hidden'}}>
+      <section style={{background:'#0D3318', minHeight:'100vh', position:'relative', overflow:'hidden'}}>
         <div className="absolute inset-0" style={{
           backgroundImage:`repeating-linear-gradient(45deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 50%)`,
           backgroundSize:'20px 20px', opacity:0.04
         }}/>
         <div className="absolute bottom-0 left-0 w-full h-px" style={{background:'linear-gradient(90deg,transparent,#C9A84C,transparent)'}}/>
 
-        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 w-full" style={{paddingTop:'3rem', paddingBottom:'3rem'}}>
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 w-full" style={{paddingTop:'calc(99px + 3rem)', paddingBottom:'3rem', minHeight:'100vh', display:'flex', flexDirection:'column', justifyContent:'center'}}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text */}
           <div className="text-center lg:text-left" style={{position:'relative',zIndex:2}}>
@@ -84,18 +84,17 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Logo card — desktop only */}
+          {/* Decorative card — desktop only */}
           <div className="hidden lg:flex justify-center items-center">
-            <div style={{position:'relative', width:340, height:500}}>
-              {/* Corner brackets */}
-              <div style={{position:'absolute',top:0,left:0,width:36,height:36,borderTop:'1px solid rgba(201,168,76,0.7)',borderLeft:'1px solid rgba(201,168,76,0.7)'}}/>
-              <div style={{position:'absolute',top:0,right:0,width:36,height:36,borderTop:'1px solid rgba(201,168,76,0.7)',borderRight:'1px solid rgba(201,168,76,0.7)'}}/>
-              <div style={{position:'absolute',bottom:0,left:0,width:36,height:36,borderBottom:'1px solid rgba(201,168,76,0.7)',borderLeft:'1px solid rgba(201,168,76,0.7)'}}/>
-              <div style={{position:'absolute',bottom:0,right:0,width:36,height:36,borderBottom:'1px solid rgba(201,168,76,0.7)',borderRight:'1px solid rgba(201,168,76,0.7)'}}/>
-              {/* Logo image */}
-              <div style={{position:'absolute',inset:16,background:'linear-gradient(135deg,#1A5C2A,#0D3318)',border:'1px solid rgba(201,168,76,0.15)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:16}}>
-                <img src="/amina-logo.png" alt="Amina Luxe" style={{width:180,height:180,objectFit:'contain',borderRadius:'50%',boxShadow:'0 0 40px rgba(201,168,76,0.2)'}}/>
-                <div style={{height:1,background:'linear-gradient(90deg,transparent,#C9A84C,transparent)',width:80}}/>
+            <div style={{position:'relative', width:320, height:460}}>
+              <div style={{position:'absolute',top:0,left:0,width:32,height:32,borderTop:'1px solid rgba(201,168,76,0.6)',borderLeft:'1px solid rgba(201,168,76,0.6)'}}/>
+              <div style={{position:'absolute',top:0,right:0,width:32,height:32,borderTop:'1px solid rgba(201,168,76,0.6)',borderRight:'1px solid rgba(201,168,76,0.6)'}}/>
+              <div style={{position:'absolute',bottom:0,left:0,width:32,height:32,borderBottom:'1px solid rgba(201,168,76,0.6)',borderLeft:'1px solid rgba(201,168,76,0.6)'}}/>
+              <div style={{position:'absolute',bottom:0,right:0,width:32,height:32,borderBottom:'1px solid rgba(201,168,76,0.6)',borderRight:'1px solid rgba(201,168,76,0.6)'}}/>
+              <div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#1A5C2A,#2E7D45)',border:'1px solid rgba(201,168,76,0.2)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:0}}>
+                <div style={{color:'rgba(201,168,76,0.12)',fontFamily:'Cinzel,serif',fontSize:'5rem',letterSpacing:'0.2em',lineHeight:1}}>AL</div>
+                <div style={{color:'#C9A84C',fontFamily:'Cinzel,serif',fontSize:'1.5rem',letterSpacing:'0.25em',marginTop:16}}>AMINA LUXE</div>
+                <div style={{height:1,background:'linear-gradient(90deg,transparent,#C9A84C,transparent)',width:80,margin:'16px 0'}}/>
                 <div style={{color:'rgba(250,246,238,0.4)',fontFamily:'Cormorant Garamond,serif',fontSize:'0.9rem',fontStyle:'italic',textAlign:'center',padding:'0 24px'}}>
                   "Where modesty meets magnificence"
                 </div>
