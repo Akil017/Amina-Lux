@@ -67,39 +67,36 @@ export default function Header() {
         </div>
 
         <div style={{maxWidth:1280, margin:'0 auto', padding:'0 24px'}}>
-          <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', height:64}}>
+          <div style={{display:'grid', gridTemplateColumns:'1fr auto 1fr', alignItems:'center', height:64}}>
 
-            {/* Mobile menu btn */}
-            <button onClick={() => setMenuOpen(!menuOpen)}
-              style={{color:CR, background:'none', border:'none', cursor:'pointer', display:'flex'}}
-              className="lg:hidden">
-              {menuOpen ? <X size={22}/> : <Menu size={22}/>}
-            </button>
+            {/* Left: Mobile menu btn / Desktop nav */}
+            <div style={{display:'flex', alignItems:'center'}}>
+              <button onClick={() => setMenuOpen(!menuOpen)}
+                style={{color:CR, background:'none', border:'none', cursor:'pointer', display:'flex'}}
+                className="lg:hidden">
+                {menuOpen ? <X size={22}/> : <Menu size={22}/>}
+              </button>
+              <nav className="hidden lg:flex" style={{gap:28}}>
+                {navLinks.map(l => (
+                  <Link key={l.href} href={l.href} style={{
+                    color: pathname === l.href ? GO : 'rgba(250,246,238,0.8)',
+                    fontSize:'11px', letterSpacing:'0.16em',
+                    fontFamily:'Cinzel,serif', textDecoration:'none',
+                    transition:'color .25s', whiteSpace:'nowrap',
+                  }}
+                  onMouseEnter={e=>(e.currentTarget.style.color=GO)}
+                  onMouseLeave={e=>(e.currentTarget.style.color=pathname===l.href?GO:'rgba(250,246,238,0.8)')}>
+                    {l.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex" style={{gap:32}}>
-              {navLinks.map(l => (
-                <Link key={l.href} href={l.href} style={{
-                  color: pathname === l.href ? GO : 'rgba(250,246,238,0.8)',
-                  fontSize:'11px', letterSpacing:'0.16em',
-                  fontFamily:'Cinzel,serif', textDecoration:'none',
-                  transition:'color .25s',
-                }}
-                onMouseEnter={e=>(e.currentTarget.style.color=GO)}
-                onMouseLeave={e=>(e.currentTarget.style.color=pathname===l.href?GO:'rgba(250,246,238,0.8)')}>
-                  {l.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Logo — centred */}
-            <Link href="/" style={{
-              position:'absolute', left:'50%', transform:'translateX(-50%)',
-              textAlign:'center', textDecoration:'none',
-            }}>
-              <div style={{color:GO, fontFamily:'Cinzel,serif', fontSize:'clamp(1rem,2.5vw,1.4rem)',
+            {/* Centre: Logo */}
+            <Link href="/" style={{textAlign:'center', textDecoration:'none'}}>
+              <div style={{color:GO, fontFamily:'Cinzel,serif', fontSize:'clamp(1rem,2vw,1.3rem)',
                 letterSpacing:'0.22em', lineHeight:1}}>AMINA LUXE</div>
-              <div style={{color:'rgba(201,168,76,0.5)', fontSize:'8px', letterSpacing:'0.28em', marginTop:3}}
+              <div style={{color:'rgba(201,168,76,0.5)', fontSize:'7px', letterSpacing:'0.28em', marginTop:3}}
                 className="hidden lg:block">MODEST LUXURY, MADE FOR ALL</div>
             </Link>
 
