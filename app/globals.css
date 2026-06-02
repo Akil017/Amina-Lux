@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   TAILWIND v4 THEME  — colours & fonts
+   Matching the Amina Luxe logo exactly:
+   ● Rich Forest Green  #1A5C2A
+   ● Deep Green (dark)  #0D3318
+   ● Gold               #C9A84C
+   ───────────────────────────────────────────── */
+@theme {
+  /* Brand greens — matched to logo */
+  --color-green-deep:  #0D3318;
+  --color-green-rich:  #1A5C2A;
+  --color-green-mid:   #2E7D45;
+  --color-green-light: #4FAD6A;
+
+  /* Brand golds */
+  --color-gold:        #C9A84C;
+  --color-gold-light:  #E2C47A;
+  --color-gold-pale:   #F5E6C0;
+
+  /* Neutrals */
+  --color-cream:       #FAF6EE;
+  --color-cream-dark:  #F0E8D5;
+  --color-charcoal:    #1C1C1C;
+  --color-muted:       #6B7B6E;
+
+  /* Fonts */
+  --font-display: "Cinzel", Georgia, serif;
+  --font-serif:   "Cormorant Garamond", Georgia, serif;
+  --font-sans:    "Jost", system-ui, sans-serif;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF6EE;
+  color: #1C1C1C;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #FAF6EE; }
+::-webkit-scrollbar-thumb { background: #2E7D45; border-radius: 3px; }
+
+/* ── FONT HELPERS ── */
+.font-display { font-family: "Cinzel", Georgia, serif; }
+.font-serif   { font-family: "Cormorant Garamond", Georgia, serif; }
+
+/* ── GOLD SHIMMER ── */
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.gold-shimmer {
+  background: linear-gradient(90deg,#C9A84C 0%,#E2C47A 35%,#FFF8E7 50%,#E2C47A 65%,#C9A84C 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 3.5s linear infinite;
+}
+
+/* ── FADE UP ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up           { animation: fadeUp .6s ease forwards; }
+.fade-up-delay-1   { animation: fadeUp .6s .15s ease forwards; opacity:0; }
+.fade-up-delay-2   { animation: fadeUp .6s .3s  ease forwards; opacity:0; }
+.fade-up-delay-3   { animation: fadeUp .6s .45s ease forwards; opacity:0; }
+.fade-up-delay-4   { animation: fadeUp .6s .6s  ease forwards; opacity:0; }
+
+/* ── PRODUCT CARD ── */
+.product-card { transition: transform .35s ease, box-shadow .35s ease; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,.1); }
+.product-card:hover .product-img { transform: scale(1.05); }
+.product-img { transition: transform .5s ease; }
+
+/* ── GOLD DIVIDER ── */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+}
+
+/* ── BADGE ── */
+.badge-gold {
+  background: #C9A84C;
+  color: #0D3318;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: .6rem;
+  letter-spacing: .1em;
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+/* ── BUTTONS ── */
+.btn-gold {
+  background: linear-gradient(135deg,#C9A84C 0%,#E2C47A 50%,#C9A84C 100%);
+  background-size: 200% auto;
+  color: #0D3318 !important;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  border: none;
+  cursor: pointer;
+  transition: background-position .35s ease, box-shadow .35s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.btn-gold:hover {
+  background-position: right center;
+  box-shadow: 0 4px 20px rgba(201,168,76,.45);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: #C9A84C !important;
+  border: 1px solid #C9A84C;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  cursor: pointer;
+  transition: all .3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.btn-outline-gold:hover { background: #C9A84C; color: #0D3318 !important; }
+
+.btn-green {
+  background: #1A5C2A;
+  color: #E2C47A !important;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  cursor: pointer;
+  transition: background .3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.btn-green:hover { background: #0D3318; }
+
+/* ── ADMIN ── */
+.stat-card { border-left: 3px solid #C9A84C; }
+
+/* ── ACCENT INPUT ── */
+input[type=range] { accent-color: #2E7D45; }
+input[type=checkbox] { accent-color: #1A5C2A; }
